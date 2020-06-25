@@ -1,11 +1,12 @@
 import React from 'react';
 import Addtask from '../tasks/AddTask';
+import Tasks from '../tasks/Tasks';
 
 function Dashboard() {
   return (
     <React.Fragment>
-      <h3>Dashboard</h3>
       <Addtask />
+      <Tasks />
     </React.Fragment>
   );
 }
