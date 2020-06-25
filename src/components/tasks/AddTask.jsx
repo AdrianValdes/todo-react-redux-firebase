@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 class Addtask extends Component {
   state = {
     task: '',
+    checked: 'false',
   };
 
   handleChange = (e) => {
@@ -14,14 +15,18 @@ class Addtask extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+
     this.props.addTask(this.state);
-    console.log(this.state);
+    this.setState({
+      task: '',
+    });
   };
 
   render() {
     return (
       <React.Fragment>
         <form
+          id="addTaskForm"
           className="container"
           autoComplete="off"
           style={{ marginTop: '38px' }}
