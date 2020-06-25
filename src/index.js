@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import App from './App';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import rootReducer from './Reducers/rootReducers';
+import rootReducer from './reducers/rootReducers';
 import thunk from 'redux-thunk';
 import { getFirebase, ReactReduxFirebaseProvider } from 'react-redux-firebase';
 import firebase from './config/firebaseConfig';

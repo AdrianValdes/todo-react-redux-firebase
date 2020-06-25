@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import { addTask } from '../../actions/taskActions';
+import { connect } from 'react-redux';
 class Addtask extends Component {
   state = {
     task: '',
@@ -13,6 +14,7 @@ class Addtask extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    this.props.addTask(this.state);
     console.log(this.state);
   };
 
@@ -44,4 +46,11 @@ class Addtask extends Component {
     );
   }
 }
-export default Addtask;
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addTask: (task) => dispatch(addTask(task)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Addtask);
